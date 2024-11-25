@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo de Futebol com Placar</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <div id="placar">
+        <div id="time1">0</div>
+        <span>X</span>
+        <div id="time2">0</div>
+    </div>
+    <div id="mapa">
+        <div id="golEsquerdo"></div>
+        <div id="golDireito"></div>
+        <div id="jogador1"></div>
+        <div id="jogador2"></div>
+        <div id="bola"></div>
+    </div>
+
+    <!-- Botões de controle para mobile -->
+    <div id="controleJogadores">
+        <div id="controleJogador1">
+            <div class="controle" id="up1">↑</div>
+            <div class="controle" id="left1">←</div>
+            <div class="controle" id="right1">→</div>
+            <div class="controle" id="down1">↓</div>
+        </div>
+        <div id="controleJogador2">
+            <div class="controle" id="up2">W</div>
+            <div class="controle" id="left2">A</div>
+            <div class="controle" id="right2">D</div>
+            <div class="controle" id="down2">S</div>
+        </div>
+    </div>
+
+    <script src="jogo.js"></script>
+</body>
+
+</html>
