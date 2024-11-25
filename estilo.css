@@ -51,6 +51,37 @@ body {
     background-color: #797979;
 }
 
+#tela-reinicio {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-size: 32px;
+    z-index: 100;
+}
+
+#reiniciar-button {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: black;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    font-family: "Tiny5";
+    margin-top: 20px;
+}
+
+#reiniciar-button:hover {
+    background-color: #797979;
+}
+
 #placar {
     display: flex;
     align-items: center;

@@ -6,6 +6,8 @@ const golEsquerdo = document.getElementById('golEsquerdo');
 const golDireito = document.getElementById('golDireito');
 const placarTime1 = document.getElementById('time1');
 const placarTime2 = document.getElementById('time2');
+const telaReinicio = document.getElementById('tela-reinicio');
+const reiniciarButton = document.getElementById('reiniciar-button');
 
 // define as posições dos objetos
 let posicaoJogador1 = { x: 232, y: 300 };
@@ -60,6 +62,15 @@ function detectarGol() {
 
     placarTime1.textContent = placar.time1;
     placarTime2.textContent = placar.time2;
+
+    verificarFimDeJogo();
+}
+
+// verifica se algum time fez gol
+function verificarFimDeJogo() {
+    if (placar.time1 === 5 || placar.time2 === 5) {
+        exibirTelaDeReinicio();
+    }
 }
 
 // reseta a bola para o centro
@@ -176,6 +187,20 @@ document.addEventListener('keyup', (event) => {
     if (event.key === 's') movimentoJogador1.down = false;
     if (event.key === 'a') movimentoJogador1.left = false;
     if (event.key === 'd') movimentoJogador1.right = false;
+});
+
+// tela de reinicio
+function exibirTelaDeReinicio() {
+    telaReinicio.style.display = 'flex';
+}
+
+reiniciarButton.addEventListener('click', function() {
+    placar.time1 = 0;
+    placar.time2 = 0;
+    placarTime1.textContent = placar.time1;
+    placarTime2.textContent = placar.time2;
+    resetarBola();
+    telaReinicio.style.display = 'none';
 });
 
 // looping do jogo
