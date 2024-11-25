@@ -13,6 +13,7 @@ let posicaoJogador2 = { x: 656, y: 300 };
 let posicaoBola = { x: 452, y: 310 };
 let velocidadeBola = { x: 4, y: 4 };
 let placar = { time1: 0, time2: 0 };
+let goalscore = new Audio('/sons/goalscore.mp3');
 
 // atualiza as posições dos objetos
 function atualizarPosicoes() {
@@ -44,6 +45,7 @@ function detectarGol() {
     ) {
         placar.time2++;
         resetarBola();
+        goalscore.play();
     }
 
     if (
@@ -53,6 +55,7 @@ function detectarGol() {
     ) {
         placar.time1++;
         resetarBola();
+        goalscore.play();
     }
 
     placarTime1.textContent = placar.time1;
@@ -129,50 +132,50 @@ function moverJogadores() {
 }
 
 // adiciona controle dos botões
-document.getElementById('up1').addEventListener('mousedown', () => movimentoJogador1.up = true);
-document.getElementById('down1').addEventListener('mousedown', () => movimentoJogador1.down = true);
-document.getElementById('left1').addEventListener('mousedown', () => movimentoJogador1.left = true);
-document.getElementById('right1').addEventListener('mousedown', () => movimentoJogador1.right = true);
+document.getElementById('up1').addEventListener('mousedown', () => movimentoJogador2.up = true);
+document.getElementById('down1').addEventListener('mousedown', () => movimentoJogador2.down = true);
+document.getElementById('left1').addEventListener('mousedown', () => movimentoJogador2.left = true);
+document.getElementById('right1').addEventListener('mousedown', () => movimentoJogador2.right = true);
 
-document.getElementById('up2').addEventListener('mousedown', () => movimentoJogador2.up = true);
-document.getElementById('down2').addEventListener('mousedown', () => movimentoJogador2.down = true);
-document.getElementById('left2').addEventListener('mousedown', () => movimentoJogador2.left = true);
-document.getElementById('right2').addEventListener('mousedown', () => movimentoJogador2.right = true);
+document.getElementById('up2').addEventListener('mousedown', () => movimentoJogador1.up = true);
+document.getElementById('down2').addEventListener('mousedown', () => movimentoJogador1.down = true);
+document.getElementById('left2').addEventListener('mousedown', () => movimentoJogador1.left = true);
+document.getElementById('right2').addEventListener('mousedown', () => movimentoJogador1.right = true);
 
 // verifica quando o botão é solto
-document.getElementById('up1').addEventListener('mouseup', () => movimentoJogador1.up = false);
-document.getElementById('down1').addEventListener('mouseup', () => movimentoJogador1.down = false);
-document.getElementById('left1').addEventListener('mouseup', () => movimentoJogador1.left = false);
-document.getElementById('right1').addEventListener('mouseup', () => movimentoJogador1.right = false);
+document.getElementById('up1').addEventListener('mouseup', () => movimentoJogador2.up = false);
+document.getElementById('down1').addEventListener('mouseup', () => movimentoJogador2.down = false);
+document.getElementById('left1').addEventListener('mouseup', () => movimentoJogador2.left = false);
+document.getElementById('right1').addEventListener('mouseup', () => movimentoJogador2.right = false);
 
-document.getElementById('up2').addEventListener('mouseup', () => movimentoJogador2.up = false);
-document.getElementById('down2').addEventListener('mouseup', () => movimentoJogador2.down = false);
-document.getElementById('left2').addEventListener('mouseup', () => movimentoJogador2.left = false);
-document.getElementById('right2').addEventListener('mouseup', () => movimentoJogador2.right = false);
+document.getElementById('up2').addEventListener('mouseup', () => movimentoJogador1.up = false);
+document.getElementById('down2').addEventListener('mouseup', () => movimentoJogador1.down = false);
+document.getElementById('left2').addEventListener('mouseup', () => movimentoJogador1.left = false);
+document.getElementById('right2').addEventListener('mouseup', () => movimentoJogador1.right = false);
 
 // verifica os eventos do teclado
 document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowUp') movimentoJogador1.up = true;
-    if (event.key === 'ArrowDown') movimentoJogador1.down = true;
-    if (event.key === 'ArrowLeft') movimentoJogador1.left = true;
-    if (event.key === 'ArrowRight') movimentoJogador1.right = true;
+    if (event.key === 'ArrowUp') movimentoJogador2.up = true;
+    if (event.key === 'ArrowDown') movimentoJogador2.down = true;
+    if (event.key === 'ArrowLeft') movimentoJogador2.left = true;
+    if (event.key === 'ArrowRight') movimentoJogador2.right = true;
 
-    if (event.key === 'w') movimentoJogador2.up = true;
-    if (event.key === 's') movimentoJogador2.down = true;
-    if (event.key === 'a') movimentoJogador2.left = true;
-    if (event.key === 'd') movimentoJogador2.right = true;
+    if (event.key === 'w') movimentoJogador1.up = true;
+    if (event.key === 's') movimentoJogador1.down = true;
+    if (event.key === 'a') movimentoJogador1.left = true;
+    if (event.key === 'd') movimentoJogador1.right = true;
 });
 
 document.addEventListener('keyup', (event) => {
-    if (event.key === 'ArrowUp') movimentoJogador1.up = false;
-    if (event.key === 'ArrowDown') movimentoJogador1.down = false;
-    if (event.key === 'ArrowLeft') movimentoJogador1.left = false;
-    if (event.key === 'ArrowRight') movimentoJogador1.right = false;
+    if (event.key === 'ArrowUp') movimentoJogador2.up = false;
+    if (event.key === 'ArrowDown') movimentoJogador2.down = false;
+    if (event.key === 'ArrowLeft') movimentoJogador2.left = false;
+    if (event.key === 'ArrowRight') movimentoJogador2.right = false;
 
-    if (event.key === 'w') movimentoJogador2.up = false;
-    if (event.key === 's') movimentoJogador2.down = false;
-    if (event.key === 'a') movimentoJogador2.left = false;
-    if (event.key === 'd') movimentoJogador2.right = false;
+    if (event.key === 'w') movimentoJogador1.up = false;
+    if (event.key === 's') movimentoJogador1.down = false;
+    if (event.key === 'a') movimentoJogador1.left = false;
+    if (event.key === 'd') movimentoJogador1.right = false;
 });
 
 // looping do jogo
