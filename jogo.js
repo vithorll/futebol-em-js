@@ -106,24 +106,24 @@ function atualizarBola() {
     ) {
         velocidadeBola.x *= -1; // Inverte a direção horizontal da bola
     
-        // Reposiciona a bola fora do jogador para evitar sobreposição
+        // reposiciona a bola fora do jogador para evitar sobreposição
         posicaoBola.x = posicaoBola.x < posicaoJogador1.x
             ? posicaoJogador1.x - 20 // Bola à esquerda do jogador
             : posicaoJogador1.x + 50; // Bola à direita do jogador
     }
 
     if (
-        posicaoBola.x < posicaoJogador2.x + 50 && // Lado direito do jogador
-        posicaoBola.x + 20 > posicaoJogador2.x && // Lado esquerdo da bola
-        posicaoBola.y < posicaoJogador2.y + 50 && // Base do jogador
-        posicaoBola.y + 20 > posicaoJogador2.y    // Topo da bola
+        posicaoBola.x < posicaoJogador2.x + 50 && // lado direito do jogador
+        posicaoBola.x + 20 > posicaoJogador2.x && // lado esquerdo da bola
+        posicaoBola.y < posicaoJogador2.y + 50 && // base do jogador
+        posicaoBola.y + 20 > posicaoJogador2.y    // topo da bola
     ) {
         velocidadeBola.x *= -1; // Inverte a direção horizontal da bola
     
-        // Reposiciona a bola fora do jogador para evitar sobreposição
+        // reposiciona a bola fora do jogador para evitar sobreposição
         posicaoBola.x = posicaoBola.x < posicaoJogador2.x
-            ? posicaoJogador2.x - 20 // Bola à esquerda do jogador
-            : posicaoJogador2.x + 50; // Bola à direita do jogador
+            ? posicaoJogador2.x - 20 // bola a esquerda do jogador
+            : posicaoJogador2.x + 50; // bola a direita do jogador
     }
 
     detectarGol();
