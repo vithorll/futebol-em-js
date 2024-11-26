@@ -15,7 +15,9 @@ let posicaoJogador2 = { x: 656, y: 300 };
 let posicaoBola = { x: 452, y: 310 };
 let velocidadeBola = { x: 4, y: 4 };
 let placar = { time1: 0, time2: 0 };
-let goalscore = new Audio('/sons/goalscore.mp3');
+let goalscore = new Audio('sons/goalfx.mp3');
+let goalinter = new Audio('sons/goal-inter.mp3');
+let goalgremio = new Audio('sons/goal-gremio.mp3');
 
 // atualiza as posições dos objetos
 function atualizarPosicoes() {
@@ -46,8 +48,10 @@ function detectarGol() {
         posicaoBola.y <= golEsquerdo.offsetTop + golEsquerdo.offsetHeight
     ) {
         placar.time2++;
+        goalinter.play();
+        posicaoJogador1 = { x: 232, y: 300 };
+        posicaoJogador2 = { x: 656, y: 300 };
         resetarBola();
-        goalscore.play();
     }
 
     if (
@@ -56,8 +60,10 @@ function detectarGol() {
         posicaoBola.y <= golDireito.offsetTop + golDireito.offsetHeight
     ) {
         placar.time1++;
+        goalgremio.play();
+        posicaoJogador1 = { x: 232, y: 300 };
+        posicaoJogador2 = { x: 656, y: 300 };
         resetarBola();
-        goalscore.play();
     }
 
     placarTime1.textContent = placar.time1;
